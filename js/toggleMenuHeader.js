@@ -9,4 +9,10 @@ $(function (){
         e.preventDefault();
         $('.list-nav').slideToggle(500);
     });
+
+    $(window).resize(function (){
+        if($(window).width() > 661){
+            $('.list-nav').removeAttr('style');
+        }
+    });
 });
