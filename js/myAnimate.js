@@ -1,5 +1,4 @@
 $(function () {
-    "use strict";
     $('.flex-slider').flexslider({
         animation: 'slide',
         slideshow: true,
@@ -17,8 +16,8 @@ $(function () {
     });
 
     let link = $(' .list-nav li a');
-    let hHeader  = $('header').outerHeight(true);
-    $(window).resize(function (){
+    let hHeader = $('header').outerHeight(true);
+    $(window).resize(function () {
         hHeader = $('header').outerHeight(true);
     });
     link.on('click', function (event) {
@@ -28,3 +27,12 @@ $(function () {
         $('html,body').animate({scrollTop: top}, 800);
     });
 });
+
+document.body.onload = function () {
+    setTimeout(function () {
+        let preloader = document.getElementById('page-preloader');
+        if (!preloader.classList.contains('done')) {
+            preloader.classList.add('done');
+        }
+    }, 1000);
+};
